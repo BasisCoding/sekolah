@@ -7,10 +7,9 @@
 		{
 			$this->db->select('menus.nama_menu, menus.icon, menus.link, menus.color, menus.parrent_id, menus.id');
 			$this->db->from('menus');
-			$this->db->join('menu_users', 'menus.id = menu_users.menu_id', 'left');
-			$this->db->join('users', 'users.id = menu_users.user_id', 'left');
+			$this->db->join('roles', 'roles.id = menus.role_id', 'left');
 			$this->db->where('parrent_id', 0);
-			$this->db->where('menu_users.user_id', $this->session->userdata('id'));
+			$this->db->where('menus.role_id', $this->session->userdata('role_id'));
 			
 			$menus = $this->db->get()->result();
 			$i = 0;
@@ -27,10 +26,9 @@
 		{
 			$this->db->select('menus.nama_menu, menus.icon, menus.link, menus.color, menus.parrent_id, menus.id');
 			$this->db->from('menus');
-			$this->db->join('menu_users', 'menus.id = menu_users.menu_id', 'left');
-			$this->db->join('users', 'users.id = menu_users.user_id', 'left');
+			$this->db->join('roles', 'roles.id = menus.role_id', 'left');
 			$this->db->where('menus.parrent_id', $id);
-			$this->db->where('menu_users.user_id', $this->session->userdata('id'));
+			$this->db->where('menus.role_id', $this->session->userdata('role_id'));
 
 			$menus = $this->db->get()->result();
 			$i = 0;
@@ -43,14 +41,38 @@
 			return $menus;
 		}
 
-		function getUsers()
+		function getRoles()
 		{
-			$this->db->select('u.nama_lengkap, u.foto, u.id, m.nama_menu, r.role_name, m.link, m.icon, m.color, m.parrent_id, COUNT(mu.user_id) as jumlah_menu');
-			$this->db->from('users as u');
-			$this->db->join('menu_users as mu', 'u.id = mu.user_id', 'left');
-			$this->db->join('menus as m', 'm.id = mu.menu_id', 'left');
-			$this->db->join('roles as r', 'r.id = u.role_id', 'left');
-			// $this->db->group_by('menu_users.user_id');
+			$this->db->select('r.role_name, r.role_slug, COUNT(m.role_id) as jumlah_menu, r.id');
+			$this->db->from('roles as r');
+			$this->db->join('menus as m', 'm.role_id = r.id', 'left');
+			$this->db->group_by('r.id');
+			return $this->db->get();
+		}
+
+		function addRole($data)
+		{
+			return $this->db->insert('roles', $data);
+		}
+
+		function updateRole($id, $data)
+		{
+			return $this->db->update('roles', $data, array('id' => $id));
+		}
+
+		function deleteRole($id)
+		{
+			return $this->db->delete('roles', array('id' => $id));
+		}
+
+		function getRoleMenus($role_id)
+		{
+			$this->db->select('*');
+			$this->db->from('menus');
+			if ($role_id != null) {
+				$this->db->where('role_id', $role_id);
+			}
+			$this->db->order_by('sequence', 'asc');
 			return $this->db->get();
 		}
 	

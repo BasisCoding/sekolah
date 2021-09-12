@@ -65,6 +65,7 @@
 				'email'			=> $row->email,
 				'nama_lengkap'	=> $row->nama_lengkap,
 				'foto'			=> $row->foto,
+				'role_id'		=> $row->role_id,
 				'role_name'		=> $row->role_name,
 				'role_slug'		=> $row->role_slug,
 				'logged' 		=> TRUE

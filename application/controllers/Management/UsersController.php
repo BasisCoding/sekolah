@@ -49,9 +49,9 @@ class UsersController extends CI_Controller {
 		foreach ($list as $ls) {
 
 			if ($ls->foto == NULL) {
-				$foto = site_url('assets/assets/img/users/default.png');
+				$foto = site_url('assets/users/default.png');
 			}else{
-				$foto = site_url('assets/assets/img/users/'.$ls->foto);
+				$foto = site_url('assets/users/'.$ls->foto);
 			}
 
 			$no++;

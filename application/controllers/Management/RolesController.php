@@ -32,6 +32,12 @@ class RolesController extends CI_Controller {
 		$this->load->view('plugins/daftar_roles');
 	}
 
+	public function selectRole()
+	{
+		$get = $this->RoleMenusModel->getRoles()->result();
+		echo json_encode($get);
+	}
+
 	public function getUserById()
 	{
 		$id = $this->input->get('id');
@@ -39,41 +45,82 @@ class RolesController extends CI_Controller {
 		echo json_encode($get);
 	}
 
-	public function getUsers()
+	public function getRoles()
 	{
 		$html = '';
-		$get = $this->RoleMenusModel->getUsers()->result();
+		$get = $this->RoleMenusModel->getRoles()->result();
 		foreach ($get as $gt) {
-
-			if ($gt->foto == NULL) {
-					$foto = site_url('assets/assets/img/users/default.png');
-				}else{
-					$foto = site_url('assets/assets/img/users/'.$gt->foto);
-				}
 			
 			$html .= '<li class="list-group-item px-0">
 						<div class="row align-items-center">
-							<div class="col-auto">
-								<a href="'.$foto.'" class="avatar rounded-circle">
-									<img alt="Image placeholder" src="'.$foto.'">
-								</a>
-							</div>
 							<div class="col ml--2">
 								<h4 class="mb-0">
-									<a href="#!">'.$gt->nama_lengkap.'</a>
+									<a href="#!">'.$gt->role_name.'</a>
 								</h4>
-								<span class="text-success">●</span>
-								<small>'.$gt->role_name.'</small>
+								<small>'.$gt->role_slug.'</small>
 							</div>
 							<div class="col-auto">
-								<span class="badge badge-success">'.$gt->jumlah_menu.'</span>
-								<button type="button" class="btn btn-sm btn-primary">Add</button>
+								<button type="button" data-id="'.$gt->id.'" data-nama="'.$gt->role_name.'" class="btn btn-sm btn-primary btn-icon view-menu">'.$gt->jumlah_menu.' Menu</button>
+								<button type="button" data-id="'.$gt->id.'" data-nama="'.$gt->role_name.'" data-slug="'.$gt->role_slug.'" class="btn btn-sm btn-warning btn-icon update-role"><i class="ni ni-settings"></i></button>
+								<button type="button" data-id="'.$gt->id.'" data-nama="'.$gt->role_name.'" data-slug="'.$gt->role_slug.'" class="btn btn-sm btn-danger btn-icon delete-role"><i class="ni ni-fat-delete"></i></button>
 							</div>
 						</div>
 					</li>';
 		}
 
 		echo $html;
+	}
+
+	public function getRoleMenus()
+	{
+		if($this->input->is_ajax_request()) {
+			header('Content-Type: application/json');
+
+			$role_id = $this->input->post('role_id');
+			$menu = $this->RoleMenusModel->getRoleMenus($role_id)->result();
+			echo json_encode($menu);
+		}
+	}
+
+	public function addRole()
+	{
+		$data['role_name'] = $this->input->post('role_name');
+		$data['role_slug'] = $this->input->post('role_slug');
+
+		$insert = $this->RoleMenusModel->addRole($data);
+		$response = array(
+			'type' => 'success',
+			'message' => 'Role '.$data['role_name'].' Berhasil ditambah'
+		);
+
+		echo json_encode($response);
+	}
+
+	public function updateRole()
+	{
+		$id = $this->input->post('id_update');
+		$data['role_name'] = $this->input->post('role_name_update');
+		$data['role_slug'] = $this->input->post('role_slug_update');
+
+		$insert = $this->RoleMenusModel->updateRole($id, $data);
+		$response = array(
+			'type' => 'success',
+			'message' => 'Role '.$data['role_name'].' Berhasil diubah'
+		);
+
+		echo json_encode($response);
+	}
+
+	public function deleteRole()
+	{
+		$id = $this->input->post('id_delete');
+		$delete = $this->RoleMenusModel->deleteRole($id);
+		$response = array(
+			'type' => 'success',
+			'message' => 'Role '.$data['role_name'].' Berhasil dihapus'
+		);
+
+		echo json_encode($response);
 	}
 }
 
