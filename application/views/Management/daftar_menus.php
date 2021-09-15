@@ -60,7 +60,14 @@
                     <div class="col-md">
                       <div class="form-group">
                         <label class="h5">Warna Menu</label>
-                        <input type="text" name="color" class="form-control">
+                        <select class="form-control" name="color">
+                          <option value="text-warning">Text Warning</option>
+                          <option value="text-primary">Text Primary</option>
+                          <option value="text-success">Text Success</option>
+                          <option value="text-info">Text Info</option>
+                          <option value="text-danger">Text Danger</option>
+                          <option value="text-muted">Text Muted</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -119,7 +126,14 @@
                     <div class="col-md">
                       <div class="form-group">
                         <label class="h5">Warna Menu</label>
-                        <input type="text" name="color_update" class="form-control">
+                        <select class="form-control" name="color_update">
+                          <option value="text-warning">Text Warning</option>
+                          <option value="text-primary">Text Primary</option>
+                          <option value="text-success">Text Success</option>
+                          <option value="text-info">Text Info</option>
+                          <option value="text-danger">Text Danger</option>
+                          <option value="text-muted">Text Muted</option>
+                        </select>
                       </div>
                     </div>
                   </div>

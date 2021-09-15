@@ -1,16 +1,17 @@
 
 <!-- nestable js -->
-<script src="<?= site_url('assets/assets/vendor/nestable/jquery.nestable.js') ?>"></script>
+<script src="<?= site_url('assets/vendor/nestable/jquery.nestable.js') ?>"></script>
 <!-- Custom js -->
-<script src="<?= site_url('assets/assets/vendor/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
-<script type="text/javascript" src="<?= site_url('assets/assets/vendor/menu-editor/bootstrap-iconpicker/js/iconset/fontawesome5-3-1.min.js') ?>"></script>
-<script type="text/javascript" src="<?= site_url('assets/assets/vendor/menu-editor/bootstrap-iconpicker/js/bootstrap-iconpicker.min.js') ?>"></script>
-<script src="<?= site_url('assets/assets/js/argon.js?v=1.1.0') ?>"></script>
+<script src="<?= site_url('assets/vendor/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/vendor/menu-editor/bootstrap-iconpicker/js/iconset/fontawesome5-3-1.min.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/vendor/menu-editor/bootstrap-iconpicker/js/bootstrap-iconpicker.min.js') ?>"></script>
+<script src="<?= site_url('assets/js/argon.js?v=1.1.0') ?>"></script>
 
 <script type="text/javascript">
 	var base_url = '<?= base_url() ?>';
 	selectRole();
-
+	getMenu();
+	
 	function selectRole() {
 		$.ajax({
 			url: '<?= base_url('Management/RolesController/selectRole') ?>',
@@ -30,19 +31,26 @@
 		});
 	}
 
-	function getMenu(result) {
-		var list = '';
-		for (var i = 0; i < result.length; i++) {
-			list += '<li class="list-group-item d-flex justify-content-between align-items-center">';
-			list += '<span class="'+result[i].color+'"><i class="'+result[i].icon+'"></i></span>';
-			list += '<span class="'+result[i].color+'">'+result[i].nama_menu+'</span>';
-			list += '<span>'+
-				'<button data-id="'+result[i].id+'" data-nama="'+result[i].nama_menu+'" data-role="'+result[i].role_id+'" data-link="'+result[i].link+'" data-icon="'+result[i].icon+'" data-warna="'+result[i].color+'" class="btn btn-warning btn-sm update-menu btn-icon"><span class="btn-inner--icon"><i class="ni ni-settings"></i></span></button>'+
-				'<button data-id="'+result[i].id+'" data-nama="'+result[i].nama_menu+'" data-link="'+result[i].link+'" data-icon="'+result[i].icon+'" data-warna="'+result[i].color+'" class="btn btn-danger btn-sm delete-menu btn-icon"><span class="btn-inner--icon"><i class="ni ni-fat-delete"></i></span></button>'+
-				'</span>';
-			list += '</li>';
-		}
-		$('#daftar-menu').html(list);
+	function getMenu() {
+		$.ajax({
+			url: 'roles/getRoleMenus',
+			type: 'POST',
+			dataType: 'JSON',
+			success:function (result) {
+				var list = '';
+				for (var i = 0; i < result.length; i++) {
+					list += '<li class="list-group-item d-flex justify-content-between align-items-center">';
+					list += '<span class="'+result[i].color+'"><i class="'+result[i].icon+'"></i></span>';
+					list += '<span class="'+result[i].color+'">'+result[i].nama_menu+'</span>';
+					list += '<span>'+
+						'<button data-id="'+result[i].id+'" data-nama="'+result[i].nama_menu+'" data-role="'+result[i].role_id+'" data-link="'+result[i].link+'" data-icon="'+result[i].icon+'" data-warna="'+result[i].color+'" class="btn btn-warning btn-sm update-menu btn-icon"><span class="btn-inner--icon"><i class="ni ni-settings"></i></span></button>'+
+						'<button data-id="'+result[i].id+'" data-nama="'+result[i].nama_menu+'" data-link="'+result[i].link+'" data-icon="'+result[i].icon+'" data-warna="'+result[i].color+'" class="btn btn-danger btn-sm delete-menu btn-icon"><span class="btn-inner--icon"><i class="ni ni-fat-delete"></i></span></button>'+
+						'</span>';
+					list += '</li>';
+				}
+				$('#daftar-menu').html(list);	
+			}
+		});
 	}
 
 	function makeUL(lst) {
@@ -68,7 +76,7 @@
 		html.push('<div class="dd-handle">'+ 
 					'<div class="d-flex justify-content-between align-items-center">' +
 						'<span>'+ elem.nama_menu +'</span>' +
-						'<span class="badge badge-success">'+ elem.role_name +'</span>' +
+						'<a class="font-italic" href="'+elem.link+'">'+elem.link+'</a><span class="badge badge-success">'+ elem.role_name +'</span>' +
 					'</div>' +
 				'</div>');
 
@@ -139,8 +147,6 @@
 			cache: false,
 			dataType:"json",
 			success: function(result){
-
-				getMenu(result);
 				$(".dd").html(makeUL(result));
 			},
 			error: function(jqXHR, textStatus, errorThrown) {

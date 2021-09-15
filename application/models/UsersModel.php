@@ -3,8 +3,8 @@
 
 	class UsersModel extends CI_Model {
 	
-		var $column_order = array(null, 'a.username','a.nama_lengkap','a.email', 'a.hp', 'a.jenis_kelamin', 'r.role_name', 'a.alamat', 'a.status'); 
-	    var $column_search = array('a.username','a.nama_lengkap','a.email', 'a.hp', 'a.jenis_kelamin', 'r.role_name', 'a.alamat', 'a.status'); //field yang diizin untuk pencarian 
+		var $column_order = array(null, 'a.username','a.nama_lengkap','a.email', 'a.hp', 'a.jenis_kelamin', 'r.role_name', 'a.alamat'); 
+	    var $column_search = array('a.username','a.nama_lengkap','a.email', 'a.hp', 'a.jenis_kelamin', 'r.role_name', 'a.alamat'); //field yang diizin untuk pencarian 
 	    var $order = array('a.nama_lengkap' => 'asc'); // default order 
 	
 	// Datatable
@@ -13,6 +13,7 @@
 			$this->db->select('a.*, r.role_name, r.role_slug');
 			$this->db->from('users as a');
 			$this->db->join('roles as r', 'r.id = a.role_id', 'left');
+			$this->db->where('role_id != ', 3);
 	        $i = 0;
 	     	
 	        foreach ($this->column_search as $item) // looping awal

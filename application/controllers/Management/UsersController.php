@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class UsersController extends CI_Controller {
+class UsersController extends MY_Controller {
 	
 	public function __construct()
 	{
@@ -23,7 +23,9 @@ class UsersController extends CI_Controller {
 		$data['menu'] = fetch_menu($menu);
 
 		$def['title'] = SHORT_SITE_URL.' | Management Users';
-		$def['breadcrumb'] = 'Daftar Users';
+		$this->mybreadcrumb->add('<i class="icofont-ui-home"></i>', base_url(''));
+		$this->mybreadcrumb->add('Users Management', base_url('users-management'));
+		$def['breadcrumb'] = $this->mybreadcrumb->render();
 
 		$this->load->view('partials/head', $def);
 		$this->load->view('partials/navbar', $data);
@@ -98,7 +100,7 @@ class UsersController extends CI_Controller {
 		$data['tanggal_lahir'] 	= $this->input->post('tanggal_lahir');
 		$data['alamat'] 		= $this->input->post('alamat');
 		$data['role_id'] 		= $this->input->post('role_id');
-		$data['status'] 		= 1;
+		$data['email_verified_at'] 		= date('Y-m-d H:i:s');
 
 		if (!empty($_FILES['foto']['name'])) {
 			$upload = h_upload($data['username'], 'assets/assets/img/users', 'gif|jpg|png|jpeg', '1024', 'foto');

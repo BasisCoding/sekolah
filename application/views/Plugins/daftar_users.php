@@ -171,9 +171,9 @@
 					$('[name="jenis_kelamin_update"]').val(data.jenis_kelamin);
 
 					if (data.foto == null) {
-						$('.foto-preview').attr('src', '<?= base_url("assets/assets/img/users/default.png") ?>');
+						$('.foto-preview').attr('src', '<?= base_url("assets/users/default.png") ?>');
 					}else{
-						$('.foto-preview').attr('src', '<?= base_url("assets/assets/img/users/") ?>'+data.foto+'');
+						$('.foto-preview').attr('src', '<?= base_url("assets/users/") ?>'+data.foto+'');
 					}
 
 					$('#modal-updateUsers').modal('show');
@@ -215,15 +215,15 @@
 
 	});
 </script>
-<script src="<?= site_url('assets/assets/vendor/datatables.net/js/jquery.dataTables.min.js') ?>"></script>
-<script src="<?= site_url('assets/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js') ?>"></script>
-<script src="<?= site_url('assets/assets/vendor/datatables.net-responsive-bs4/js/dataTables.responsive.min.js') ?>"></script>
-<script src="<?= site_url('assets/assets/vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') ?>"></script>
-<script src="<?= site_url('assets/assets/vendor/select2/dist/js/select2.min.js') ?>"></script>
+<script src="<?= site_url('assets/vendor/datatables.net/js/jquery.dataTables.min.js') ?>"></script>
+<script src="<?= site_url('assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js') ?>"></script>
+<script src="<?= site_url('assets/vendor/datatables.net-responsive-bs4/js/dataTables.responsive.min.js') ?>"></script>
+<script src="<?= site_url('assets/vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') ?>"></script>
+<script src="<?= site_url('assets/vendor/select2/dist/js/select2.min.js') ?>"></script>
 <script src="https://cdn.datatables.net/fixedcolumns/3.3.3/js/dataTables.fixedColumns.min.js"></script>
-<script src="<?= site_url('assets/assets/vendor/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
+<script src="<?= site_url('assets/vendor/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
 
-<script src="<?= site_url('assets/assets/js/argon.js?v=1.1.0') ?>"></script>
+<script src="<?= site_url('assets/js/argon.js?v=1.1.0') ?>"></script>
 
 </body>
 </html>

@@ -173,7 +173,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/bootstrap.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/bootstrap.jpg">
                     </a>
                   </div>
                   <div class="col">
@@ -189,7 +189,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/angular.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/angular.jpg">
                     </a>
                   </div>
                   <div class="col">
@@ -205,7 +205,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/sketch.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/sketch.jpg">
                     </a>
                   </div>
                   <div class="col">
@@ -221,7 +221,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/react.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/react.jpg">
                     </a>
                   </div>
                   <div class="col">
@@ -237,7 +237,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/vue.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/vue.jpg">
                     </a>
                   </div>
                   <div class="col">
@@ -284,7 +284,7 @@
                       <th scope="row">
                         <div class="media align-items-center">
                           <a href="#" class="avatar rounded-circle mr-3">
-                            <img alt="Image placeholder" src="../../assets/img/theme/bootstrap.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/bootstrap.jpg">
                           </a>
                           <div class="media-body">
                             <span class="name mb-0 text-sm">Argon Design System</span>
@@ -303,16 +303,16 @@
                       <td>
                         <div class="avatar-group">
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-1.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-2.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-3.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-4.jpg">
                           </a>
                         </div>
                       </td>
@@ -343,7 +343,7 @@
                       <th scope="row">
                         <div class="media align-items-center">
                           <a href="#" class="avatar rounded-circle mr-3">
-                            <img alt="Image placeholder" src="../../assets/img/theme/angular.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/angular.jpg">
                           </a>
                           <div class="media-body">
                             <span class="name mb-0 text-sm">Angular Now UI Kit PRO</span>
@@ -362,16 +362,16 @@
                       <td>
                         <div class="avatar-group">
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-1.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-2.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-3.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-4.jpg">
                           </a>
                         </div>
                       </td>
@@ -402,7 +402,7 @@
                       <th scope="row">
                         <div class="media align-items-center">
                           <a href="#" class="avatar rounded-circle mr-3">
-                            <img alt="Image placeholder" src="../../assets/img/theme/sketch.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/sketch.jpg">
                           </a>
                           <div class="media-body">
                             <span class="name mb-0 text-sm">Black Dashboard</span>
@@ -421,16 +421,16 @@
                       <td>
                         <div class="avatar-group">
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-1.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-2.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-3.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-4.jpg">
                           </a>
                         </div>
                       </td>
@@ -461,7 +461,7 @@
                       <th scope="row">
                         <div class="media align-items-center">
                           <a href="#" class="avatar rounded-circle mr-3">
-                            <img alt="Image placeholder" src="../../assets/img/theme/react.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/react.jpg">
                           </a>
                           <div class="media-body">
                             <span class="name mb-0 text-sm">React Material Dashboard</span>
@@ -480,16 +480,16 @@
                       <td>
                         <div class="avatar-group">
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-1.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-2.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-3.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-4.jpg">
                           </a>
                         </div>
                       </td>
@@ -520,7 +520,7 @@
                       <th scope="row">
                         <div class="media align-items-center">
                           <a href="#" class="avatar rounded-circle mr-3">
-                            <img alt="Image placeholder" src="../../assets/img/theme/vue.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/vue.jpg">
                           </a>
                           <div class="media-body">
                             <span class="name mb-0 text-sm">Vue Paper UI Kit PRO</span>
@@ -539,16 +539,16 @@
                       <td>
                         <div class="avatar-group">
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-1.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-2.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-3.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-4.jpg">
                           </a>
                         </div>
                       </td>
@@ -579,7 +579,7 @@
                       <th scope="row">
                         <div class="media align-items-center">
                           <a href="#" class="avatar rounded-circle mr-3">
-                            <img alt="Image placeholder" src="../../assets/img/theme/bootstrap.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/bootstrap.jpg">
                           </a>
                           <div class="media-body">
                             <span class="name mb-0 text-sm">Argon Design System</span>
@@ -598,16 +598,16 @@
                       <td>
                         <div class="avatar-group">
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-1.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-2.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-3.jpg">
                           </a>
                           <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                            <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                            <img alt="Image placeholder" src="../../img/theme/team-4.jpg">
                           </a>
                         </div>
                       </td>
@@ -668,7 +668,7 @@
                   <div class="row align-items-center">
                     <div class="col-auto">
                       <!-- Country flag -->
-                      <img src="../../assets/img/icons/flags/US.png" alt="Country flag" />
+                      <img src="../../img/icons/flags/US.png" alt="Country flag" />
                     </div>
                     <div class="col">
                       <small>Country:</small>
@@ -688,7 +688,7 @@
                   <div class="row align-items-center">
                     <div class="col-auto">
                       <!-- Country flag -->
-                      <img src="../../assets/img/icons/flags/DE.png" alt="Country flag" />
+                      <img src="../../img/icons/flags/DE.png" alt="Country flag" />
                     </div>
                     <div class="col">
                       <small>Country:</small>
@@ -708,7 +708,7 @@
                   <div class="row align-items-center">
                     <div class="col-auto">
                       <!-- Country flag -->
-                      <img src="../../assets/img/icons/flags/GB.png" alt="Country flag" />
+                      <img src="../../img/icons/flags/GB.png" alt="Country flag" />
                     </div>
                     <div class="col">
                       <small>Country:</small>
@@ -746,7 +746,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/team-1.jpg">
                     </a>
                   </div>
                   <div class="col ml--2">
@@ -766,7 +766,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/team-2.jpg">
                     </a>
                   </div>
                   <div class="col ml--2">
@@ -786,7 +786,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/team-3.jpg">
                     </a>
                   </div>
                   <div class="col ml--2">
@@ -806,7 +806,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/team-4.jpg">
                     </a>
                   </div>
                   <div class="col ml--2">
@@ -910,7 +910,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/bootstrap.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/bootstrap.jpg">
                     </a>
                   </div>
                   <div class="col">
@@ -926,7 +926,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/angular.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/angular.jpg">
                     </a>
                   </div>
                   <div class="col">
@@ -942,7 +942,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/sketch.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/sketch.jpg">
                     </a>
                   </div>
                   <div class="col">
@@ -958,7 +958,7 @@
                   <div class="col-auto">
                     <!-- Avatar -->
                     <a href="#" class="avatar rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/theme/react.jpg">
+                      <img alt="Image placeholder" src="../../img/theme/react.jpg">
                     </a>
                   </div>
                   <div class="col">

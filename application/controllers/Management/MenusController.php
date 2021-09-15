@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MenusController extends CI_Controller {
+class MenusController extends MY_Controller {
 	
 	public function __construct()
 	{
@@ -9,19 +9,23 @@ class MenusController extends CI_Controller {
 		if ($this->session->userdata('logged') == false) {
 			redirect('login','refresh');
 		}
+		
 		$this->load->model('RoleMenusModel');
-		$this->load->helper('menu');
-
 		$this->load->model('MenusModel');
+
+		$this->load->helper('menu');
 	}
 	
 	public function index()
 	{
 		$menu = $this->RoleMenusModel->get_menu();
-		$data['menu'] = fetch_menu($menu);
+		$data['menu'] = fetch_menu($menu, 'menus-management');
 
 		$def['title'] = SHORT_SITE_URL.' | Management Menus';
-		$def['breadcrumb'] = 'Daftar Menu';
+		
+		$this->mybreadcrumb->add('<i class="icofont-ui-home"></i>', base_url(''));
+		$this->mybreadcrumb->add('Menus Management', base_url('menus-management'));
+		$def['breadcrumb'] = $this->mybreadcrumb->render();
 
 		$this->load->view('partials/head', $def);
 		$this->load->view('partials/navbar', $data);

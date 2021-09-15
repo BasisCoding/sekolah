@@ -18,7 +18,6 @@
 			$this->db->from($this->table_users);
 			$this->db->where('username', $username);
 			$this->db->where('password', $password);
-			$this->db->where('status', 1);
 			$this->db->limit(1);
 			$users = $this->db->get();
 			if ($users->num_rows() > 0) {

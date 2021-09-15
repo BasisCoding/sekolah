@@ -19,18 +19,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title><?= SHORT_SITE_URL.' | '.$page_title ?></title>
+  <title><?= _APP_NAME.' | '.$page_title ?></title>
   <!-- Favicon -->
-  <link rel="icon" href="<?= site_url('assets/assets/img/brand/favicon.png') ?>" type="image/png">
+  <link rel="icon" href="<?= site_url('assets/img/brand/'._LOGO_SEKOLAH) ?>" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
-  <link rel="stylesheet" href="<?= site_url('assets/assets/vendor/nucleo/css/nucleo.css') ?>" type="text/css">
-  <link rel="stylesheet" href="<?= site_url('assets/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') ?>" type="text/css">
-  <link rel="stylesheet" href="<?= site_url('assets/assets/vendor/animate.css/animate.min.css') ?>">
+  <link rel="stylesheet" href="<?= site_url('assets/vendor/nucleo/css/nucleo.css') ?>" type="text/css">
+  <link rel="stylesheet" href="<?= site_url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') ?>" type="text/css">
+  <link rel="stylesheet" href="<?= site_url('assets/vendor/animate.css/animate.min.css') ?>">
 
   <!-- Argon CSS -->
-  <link rel="stylesheet" href="<?= site_url('assets/assets/css/argon.css?v=1.1.0') ?>" type="text/css">
+  <link rel="stylesheet" href="<?= site_url('assets/css/argon.css?v=1.1.0') ?>" type="text/css">
 </head>
 
 <body class="bg-default">
@@ -45,10 +45,10 @@
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-body px-lg-4 py-lg-4">
               <div class="card-img text-center">
-                <img width="100" height="100" src="<?= site_url('assets/assets/img/brand/logo.png') ?>">
+                <img width="100" height="100" src="<?= site_url('assets/img/brand/'._LOGO_SEKOLAH) ?>">
               </div>
               <div class="text-center text-muted mb-4">
-                <small><?= SITE_URL ?></small>
+                <small><?= _APP_NAME ?></small>
               </div>
               <form role="form" id="form-login" method="post">
                 <div class="form-group mb-3">
@@ -95,18 +95,18 @@
   </div>
   
   <!-- Core -->
-  <script src="<?= site_url('assets/assets/vendor/jquery/dist/jquery.min.js') ?>"></script>
-  <script src="<?= site_url('assets/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script> 
-  <script src="<?= site_url('assets/assets/vendor/js-cookie/js.cookie.js') ?>"></script>
+  <script src="<?= site_url('assets/vendor/jquery/dist/jquery.min.js') ?>"></script>
+  <script src="<?= site_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script> 
+  <script src="<?= site_url('assets/vendor/js-cookie/js.cookie.js') ?>"></script>
 
-  <script src="<?= site_url('assets/assets/vendor/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
+  <script src="<?= site_url('assets/vendor/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
 
   <script type="text/javascript">
     $(document).ready(function() {
       $('#form-login').on('submit', function() {
 
         $.ajax({
-          url: '<?= site_url('Auth/LoginController/login') ?>',
+          url: '<?= site_url('Auth/login') ?>',
           type: 'POST',
           dataType:'JSON',
           data: $(this).serialize(),

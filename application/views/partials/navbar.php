@@ -4,7 +4,7 @@
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="<?= base_url('assets/pages/dashboards/alternative.html') ?>" target="_blank">
-          <img src="<?= base_url('assets/assets/img/brand/color.png') ?>" class="navbar-brand-img" alt="...">
+          <img src="<?= base_url('assets/img/brand/'._APP_ICON) ?>" class="navbar-brand-img" alt="...">
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -114,7 +114,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url('assets/assets/img/theme/team-1.jpg') ?>" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-1.jpg') ?>" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -133,7 +133,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url('assets/assets/img/theme/team-2.jpg') ?>" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-2.jpg') ?>" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -152,7 +152,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url('assets/assets/img/theme/team-3.jpg') ?>" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-3.jpg') ?>" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -171,7 +171,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url('assets/assets/img/theme/team-4.jpg') ?>" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-4.jpg') ?>" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -190,7 +190,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="<?= base_url('assets/assets/img/theme/team-5.jpg') ?>" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-5.jpg') ?>" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">

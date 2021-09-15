@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class RolesController extends CI_Controller {
+class RolesController extends MY_Controller {
 	
 	public function __construct()
 	{
@@ -22,7 +22,10 @@ class RolesController extends CI_Controller {
 		$data['menu'] = fetch_menu($menu);
 
 		$def['title'] = SHORT_SITE_URL.' | Management Roles';
-		$def['breadcrumb'] = 'Daftar Roles';
+		$this->mybreadcrumb->add('<i class="icofont-ui-home"></i>', base_url(''));
+
+		$this->mybreadcrumb->add('Role Management', base_url('roles-management'));
+		$def['breadcrumb'] = $this->mybreadcrumb->render();
 
 		$this->load->view('partials/head', $def);
 		$this->load->view('partials/navbar', $data);

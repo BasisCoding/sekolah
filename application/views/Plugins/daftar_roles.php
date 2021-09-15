@@ -145,10 +145,10 @@
 		});
 	});
 </script>
-<script src="<?= site_url('assets/assets/vendor/select2/dist/js/select2.min.js') ?>"></script>
-<script src="<?= site_url('assets/assets/vendor/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
+<script src="<?= site_url('assets/vendor/select2/dist/js/select2.min.js') ?>"></script>
+<script src="<?= site_url('assets/vendor/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
 
-<script src="<?= site_url('assets/assets/js/argon.js?v=1.1.0') ?>"></script>
+<script src="<?= site_url('assets/js/argon.js?v=1.1.0') ?>"></script>
 
 </body>
 </html>

@@ -10,6 +10,7 @@
 			$this->db->join('roles', 'roles.id = menus.role_id', 'left');
 			$this->db->where('parrent_id', 0);
 			$this->db->where('menus.role_id', $this->session->userdata('role_id'));
+			$this->db->order_by('sequence', 'asc');
 			
 			$menus = $this->db->get()->result();
 			$i = 0;
@@ -29,6 +30,7 @@
 			$this->db->join('roles', 'roles.id = menus.role_id', 'left');
 			$this->db->where('menus.parrent_id', $id);
 			$this->db->where('menus.role_id', $this->session->userdata('role_id'));
+			$this->db->order_by('sequence', 'asc');
 
 			$menus = $this->db->get()->result();
 			$i = 0;

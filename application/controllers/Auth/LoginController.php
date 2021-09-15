@@ -1,7 +1,7 @@
 	<?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 	
-	class LoginController extends CI_Controller {
+	class LoginController extends MY_Controller {
 
 		public function __construct()
 		{
@@ -9,7 +9,7 @@
 			$this->load->model('AuthModel');
 			$this->load->helper('String');
 		}
-	
+
 		public function index()
 		{
 			$data['page_title'] = 'Login';
@@ -37,15 +37,23 @@
 
 			$row = $this->AuthModel->login($username, $password);
 			if ($row) {
-				if ($remember) {
-					$key = random_string('alnum', 64);
-					setcookie('sekolah', $key, 3600*24*30);
-					$update = array('cookie' => $key);
+				if ($row->email_verified_at == NULL) {
+					$response = array(
+						'status' => 'warning',
+						'message' => 'Silahkan verifikasi email terlebih dahulu, periksa kotak masuk atau spam !',
+						'redirect' => base_url('login'),
+					);
+				}else{
+					if ($remember) {
+						$key = random_string('alnum', 64);
+						setcookie('sekolah', $key, 3600*24*30);
+						$update = array('cookie' => $key);
 
-					$this->AuthModel->update($update, $row->id);
+						$this->AuthModel->update($update, $row->id);
+					}
+
+					$response = $this->_reg_session($row);
 				}
-
-				$response = $this->_reg_session($row);
 			}else{
 				$response = array(
 					'status' => 'danger',
@@ -95,7 +103,7 @@
 			$password 	= hash('sha512', $get.config_item('encryption_key'));
 			echo $password;
 		}
-	
+
 	}
 	
 	/* End of file Login.php */
