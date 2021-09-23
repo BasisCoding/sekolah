@@ -9,11 +9,8 @@ class UsersController extends MY_Controller {
 		if ($this->session->userdata('logged') == false) {
 			redirect('login','refresh');
 		}
-		$this->load->model('RoleMenusModel');
-		$this->load->helper('menu');
+		check_role('users-management');
 		$this->load->helper('upload');
-
-
 		$this->load->model('UsersModel');
 	}
 	
@@ -90,29 +87,30 @@ class UsersController extends MY_Controller {
 
 	public function addUsers()
 	{
-		$data['username'] 		= $this->input->post('username');
-		$data['password'] 		= hash('sha512', $this->input->post('password').config_item('encryption_key'));
-		$data['nama_lengkap'] 	= $this->input->post('nama_lengkap');
-		$data['email'] 			= $this->input->post('email');
+		$users['username'] 		= $this->input->post('username');
+		$users['password'] 		= hash('sha512', $this->input->post('password').config_item('encryption_key'));
+		$users['nama_lengkap'] 	= $this->input->post('nama_lengkap');
+		$users['email'] 			= $this->input->post('email');
+		$users['role_id'] 		= $this->input->post('role_id');
+		$users['email_verified_at'] 		= date('Y-m-d H:i:s');
+		
 		$data['hp'] 			= $this->input->post('hp');
 		$data['jenis_kelamin'] 	= $this->input->post('jenis_kelamin');
 		$data['tempat_lahir'] 	= $this->input->post('tempat_lahir');
 		$data['tanggal_lahir'] 	= $this->input->post('tanggal_lahir');
 		$data['alamat'] 		= $this->input->post('alamat');
-		$data['role_id'] 		= $this->input->post('role_id');
-		$data['email_verified_at'] 		= date('Y-m-d H:i:s');
 
 		if (!empty($_FILES['foto']['name'])) {
-			$upload = h_upload($data['username'], 'assets/assets/img/users', 'gif|jpg|png|jpeg', '1024', 'foto');
+			$upload = h_upload($users['username'], 'assets/users', 'gif|jpg|png|jpeg', '1024', 'foto');
 			
 			if($upload){
-				$data['foto'] = $upload;
+				$users['foto'] = $upload;
 			}else{
-				$data['foto'] = null;
+				$users['foto'] = null;
 			}
 		}
 
-		$act = $this->UsersModel->addUsers($data);
+		$act = $this->UsersModel->addUsers($users, $data);
 
 		if ($act) {
 			$response = array(
@@ -148,7 +146,7 @@ class UsersController extends MY_Controller {
 		$data['role_id'] 		= $this->input->post('role_id');
 
 		if (!empty($_FILES['foto']['name'])) {
-			$upload = h_upload($username, 'assets/assets/img/users', 'gif|jpg|png|jpeg', '1024', 'foto');
+			$upload = h_upload($username, 'assets/users', 'gif|jpg|png|jpeg', '1024', 'foto');
 			
 			if($upload){
 				$data['foto'] = $upload;

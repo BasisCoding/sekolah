@@ -74,8 +74,9 @@
                     <span class="text-muted">Remember me</span>
                   </label>
                 </div>
-                <div class="text-center">
-                  <button type="submit" id="btn-login" class="btn btn-primary my-4">Sign in</button>
+                <div class="d-flex justify-content-between my-4">
+                  <span class="h6">Belum Mendaftar ? <a href="<?= base_url('register') ?>">klik disini</a></span>
+                  <button type="submit" id="btn-login" class="btn btn-primary">Sign in</button>
                 </div>
               </form>
             </div>

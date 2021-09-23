@@ -51,17 +51,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['default_controller'] = 'home';
-$route['404_override'] = '';
+$route['404_override'] = 'Error404';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['login']		= 'Auth/LoginController';
 	$route['Auth/login']		= 'Auth/LoginController/login';
 $route['register']	= 'Auth/RegisterController';
 	$route['Auth/register']	= 'Auth/RegisterController/register';
+	$route['verification/(:any)']	= 'Auth/RegisterController/verification/$1';
 	
 $route['logout']	= 'Auth/LoginController/logout';
 $route['password']	= 'Auth/LoginController/create_password';
 
+
+// Route Super Admin
 $route['superadmin']		= 'Dashboard/DashboardController';
 
 $route['users-management']	= 'Management/UsersController/index';
@@ -83,3 +86,11 @@ $route['roles-management']	= 'Management/RolesController/index';
 	$route['roles/addRole']		= 'Management/RolesController/addRole';
 	$route['roles/updateRole']		= 'Management/RolesController/updateRole';
 	$route['roles/getRoleMenus']	= 'Management/RolesController/getRoleMenus';
+
+$route['calon-siswa']	= 'PPDB/CalonSiswaController/index';
+	$route['calon-siswa/getCalonSiswa']		= 'PPDB/CalonSiswaController/getCalonSiswa';
+
+// Route Siswa
+$route['siswa']		= 'Dashboard/DashboardController';
+
+$route['profil-siswa'] = 'Siswa/Profil/index';

@@ -7,12 +7,17 @@
             <div class="card-body">
 
               <button class="btn btn-outline-primary btn-round col mb-2" data-toggle="modal" data-target="#modal-addMenu">
-                <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> Tambah</button>
+                <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> Tambah
+              </button>
 
-                <ul id="daftar-menu" class="list-group"></ul>
+              <div class="form-group">
+                <select class="form-control role_akses" name="select-role-menu"></select>
               </div>
+
+              <ul id="daftar-menu" class="list-group"></ul>
             </div>
           </div>
+        </div>
 
           <div class="col-md-7">
             <div class="card">

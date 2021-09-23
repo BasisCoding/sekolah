@@ -29,6 +29,7 @@
   <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= site_url('assets/css/argon.css?v=1.1.0') ?>" type="text/css">
+
 </head>
 
 <body>

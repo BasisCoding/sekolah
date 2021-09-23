@@ -9,10 +9,7 @@ class RolesController extends MY_Controller {
 		if ($this->session->userdata('logged') == false) {
 			redirect('login','refresh');
 		}
-		$this->load->model('RoleMenusModel');
-		$this->load->helper('menu');
-
-
+		check_role('roles-management');
 		$this->load->model('UsersModel');
 	}
 	

@@ -261,7 +261,10 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="<?= base_url('assets/users/'.$this->session->userdata('link').'/'.$this->session->userdata('foto')) ?>">
+                    <?php 
+                      $img = ($this->session->userdata('foto') != null) ? $this->session->userdata('foto') : 'default.png' ;
+                    ?>
+                    <img alt="Image placeholder" src="<?= base_url('assets/users/'.$this->session->userdata('link').'/'.$img) ?>">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('nama_lengkap'); ?></span>

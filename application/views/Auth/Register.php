@@ -128,15 +128,22 @@
                   </div>
                 </div>
                 
-                
-                <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input" id=" ketentuan" type="checkbox" required="">
-                  <label class="custom-control-label" for=" ketentuan">
-                    <span class="text-muted"><small>Dengan mencentang, anda menyetujui ketentuan, kebijakan data kami, anda akan menerima verifikasi email setelah mendaftar.</small></span>
-                  </label>
+                <div class="row">
+                  <div class="col-md">
+                    <div class="custom-control custom-control-alternative custom-checkbox">
+                      <input class="custom-control-input" id=" ketentuan" type="checkbox" required="">
+                      <label class="custom-control-label" for=" ketentuan">
+                        <span class="text-muted"><small>Dengan mencentang, anda menyetujui ketentuan, kebijakan data kami, anda akan menerima verifikasi email setelah mendaftar.</small></span>
+                      </label>
+                    </div>
+                  </div>
                 </div>
-                <div class="text-center">
-                  <button type="submit" id="btn-login" class="btn btn-primary mt-6 mb-2">Sign in</button>
+
+                <div class="row mt-5">
+                  <div class="col-md d-flex justify-content-between">
+                    <span class="h6">Sudah Mendaftar ? <a href="<?= base_url('login') ?>">klik disini</a></span>
+                    <button type="submit" id="btn-register" class="btn btn-primary">Register</button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -207,6 +214,8 @@
               }, 1500);
             }
 
+            $("#btn-register").attr('disabled', false);
+            $("#btn-register").html('Register');
           }
         });
 

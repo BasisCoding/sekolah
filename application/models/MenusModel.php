@@ -9,6 +9,7 @@ class MenusModel extends CI_Model {
 		$this->db->from('menus');
 		$this->db->join('roles', 'roles.id = menus.role_id', 'left');
 		$this->db->order_by('sequence', 'asc');
+		$this->db->where('role_id', $this->input->post('role_id'));
 		$this->db->where('menus.parrent_id', 0);
 		$parrent = $this->db->get();
 		$menu = $parrent->result();
@@ -28,6 +29,7 @@ class MenusModel extends CI_Model {
 		$this->db->from('menus');
 		$this->db->join('roles', 'roles.id = menus.role_id', 'left');
 		$this->db->order_by('sequence', 'asc');
+		$this->db->where('role_id', $this->input->post('role_id'));
 		$this->db->where('menus.parrent_id', $parrent_id);
 		$parrent = $this->db->get();
 		$menu = $parrent->result();

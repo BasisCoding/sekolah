@@ -11,6 +11,14 @@
 	var base_url = '<?= base_url() ?>';
 	selectRole();
 	getMenu();
+	getMenuNestable();
+
+
+	$('[name="select-role-menu"]').on('change', function() {
+		var role_id = $(this).val();
+		getMenu(role_id);
+		getMenuNestable(role_id);
+	});
 	
 	function selectRole() {
 		$.ajax({
@@ -31,10 +39,11 @@
 		});
 	}
 
-	function getMenu() {
+	function getMenu(role_id=null) {
 		$.ajax({
 			url: 'roles/getRoleMenus',
 			type: 'POST',
+			data:{role_id:role_id},
 			dataType: 'JSON',
 			success:function (result) {
 				var list = '';
@@ -138,12 +147,12 @@
 		});
 	}
 
-	$(function() {
+	function getMenuNestable(role_id=null) {
 		$('.dd').nestable();
 		$.ajax({
 			type: "POST",
 			url: base_url + "menus/getMenus",
-			data: {},
+			data: {role_id:role_id},
 			cache: false,
 			dataType:"json",
 			success: function(result){
@@ -167,46 +176,29 @@
 				}); 
 			}
 		});
+	}
 
-		$('.btn-save').on('click', function (e) {
-			subIndicTreeObj = [];
-			var btnSave = $(this);
-			findOlChild($('#nestable'));
-			e.preventDefault();
-			$(this).attr('disabled', true);
-			$(this).html('<i class="fas fa-spinner fa-spin"></i>');
-			$.ajax({
-				type:"POST",
-				url: base_url + "menus/updateMenus",
-				data:{data:subIndicTreeObj},
-				success:function(data){
-					
-					if(data.type == 'success'){
-						btnSave.attr('disabled', false);
-						btnSave.html('Save');
-						$.notify({
-							icon: 'ni ni-bell-55',
-							message:data.message
-						},{
-							type:data.type,
-							z_index:2000,
-							placement: {
-								from: "top",
-								align: "right"
-							},
-							animate: {
-								enter: 'animated fadeInDown',
-								exit: 'animated fadeOutUp'
-							}
-						}); 
-					}
-				},
-				error:function(jqXHR, textStatus, errorThrown){
+	$('.btn-save').on('click', function (e) {
+		subIndicTreeObj = [];
+		var btnSave = $(this);
+		findOlChild($('#nestable'));
+		e.preventDefault();
+		$(this).attr('disabled', true);
+		$(this).html('<i class="fas fa-spinner fa-spin"></i>');
+		$.ajax({
+			type:"POST",
+			url: base_url + "menus/updateMenus",
+			data:{data:subIndicTreeObj},
+			success:function(data){
+				
+				if(data.type == 'success'){
+					btnSave.attr('disabled', false);
+					btnSave.html('Save');
 					$.notify({
 						icon: 'ni ni-bell-55',
-						message:errorThrown
+						message:data.message
 					},{
-						type:'danger',
+						type:data.type,
 						z_index:2000,
 						placement: {
 							from: "top",
@@ -217,10 +209,27 @@
 							exit: 'animated fadeOutUp'
 						}
 					}); 
-					btnSave.attr('disabled', false);
-					btnSave.html('Save');
 				}
-			});
+			},
+			error:function(jqXHR, textStatus, errorThrown){
+				$.notify({
+					icon: 'ni ni-bell-55',
+					message:errorThrown
+				},{
+					type:'danger',
+					z_index:2000,
+					placement: {
+						from: "top",
+						align: "right"
+					},
+					animate: {
+						enter: 'animated fadeInDown',
+						exit: 'animated fadeOutUp'
+					}
+				}); 
+				btnSave.attr('disabled', false);
+				btnSave.html('Save');
+			}
 		});
 	});
 

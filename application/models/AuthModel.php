@@ -47,6 +47,12 @@
 			$this->db->where('cookie', $cookie);
 			return $this->db->get('users');
 		}
+
+		function verification($code)
+		{
+			$data['email_verified_at'] = date('Y-m-d H:i:s');
+			return $this->db->update('users', $data, array('verified_code' => $code));
+		}
 	
 	}
 	

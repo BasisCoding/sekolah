@@ -10,6 +10,7 @@ class RegisterController extends MY_Controller {
 		$this->load->helper('form');
 		$this->load->helper('security');
 		$this->load->model('UsersModel');
+		$this->load->model('AuthModel');
 	}
 	
 	public function index()
@@ -103,12 +104,12 @@ class RegisterController extends MY_Controller {
 			
 			$data = [
 				'type'			=> 'val_error',
-				'nama_lengkap' 	=> form_error('nama_lengkap', '<small class="text-danger">', '</small>'), 
-				'username' 		=> form_error('username', '<small class="text-danger">', '</small>'), 
-				'password' 		=> form_error('password', '<small class="text-danger">', '</small>'), 
-				'conf_password' => form_error('conf_password', '<small class="text-danger">', '</small>'), 
-				'email' 		=> form_error('email', '<small class="text-danger">', '</small>'), 
-				'conf_email' 	=> form_error('conf_email', '<small class="text-danger">', '</small>')
+				'nama_lengkap' 	=> form_error('nama_lengkap', '<small class="text-danger h6">', '</small>'), 
+				'username' 		=> form_error('username', '<small class="text-danger h6">', '</small>'), 
+				'password' 		=> form_error('password', '<small class="text-danger h6">', '</small>'), 
+				'conf_password' => form_error('conf_password', '<small class="text-danger h6">', '</small>'), 
+				'email' 		=> form_error('email', '<small class="text-danger h6">', '</small>'), 
+				'conf_email' 	=> form_error('conf_email', '<small class="text-danger h6">', '</small>')
 			];
 
 			echo json_encode($data);
@@ -144,7 +145,7 @@ class RegisterController extends MY_Controller {
 
 		$data['from'] 	= 'basiscoding20@gmail.com';
 		$data['to'] 	= $to;
-		$data['title'] 	= 'Konfirmasi Email anda untuk melakukan login';
+		$data['title'] 	= 'Konfirmasi Email';
 		$data['kode'] 	= $kode;
 
 		$template = $this->load->view('template-email', $data, TRUE);
@@ -179,6 +180,24 @@ class RegisterController extends MY_Controller {
     	$str = random_string('alnum', 10);
     	$this->db->update('users', array('verified_code' => $str), array('email' => $email));
     	$this->send_email($email, $str);
+    }
+
+    public function verification($code)
+    {
+    	$validasi = $this->db->get_where('users', array('verified_code' => $code));
+    	if ($validasi->num_rows() > 0) {
+    		if ($validasi->row()->email_verified_at == NULL) {
+	    		$update = $this->AuthModel->verification($code);
+	    		echo "<script>alert('Verifikasi berhasil !!!');</script>";
+
+	    		redirect('login','refresh');
+    		}else{
+    			echo "<script>alert('Akun anda sudah terverifikasi sebelumnya !!!');</script>";
+	    		redirect('login','refresh');
+    		}
+    	}else{
+    		echo "<script>alert('Kode verifikasi sudah kadaluwarsa !!!');</script>";
+    	}
     }
 }
 
