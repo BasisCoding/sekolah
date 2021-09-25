@@ -93,4 +93,5 @@ $route['calon-siswa']	= 'PPDB/CalonSiswaController/index';
 // Route Siswa
 $route['siswa']		= 'Dashboard/DashboardController';
 
+$route['data-registrasi'] = 'Siswa/Registrasi/index';
 $route['profil-siswa'] = 'Siswa/Profil/index';
